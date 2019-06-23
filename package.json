@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server",
-    "server": "nodemon server"
+    "server": "supervisor server"
   },
   "author": "Nick Green",
   "license": "MIT",
@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "concurrently": "^4.1.0",
-    "nodemon": "^1.19.1"
+    "nodemon": "^1.19.1",
+    "supervisor": "^0.12.0"
   }
 }
