@@ -41,7 +41,7 @@ router.post(
     const { email, password } = req.body;
 
     try {
-      // See if user exists
+      // See if user exists in db using model
       let user = await User.findOne({ email });
 
       if (!user) {
