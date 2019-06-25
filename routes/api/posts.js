@@ -156,9 +156,6 @@ router.put('/unlike/:id', auth, async (req, res) => {
       return res.status(400).json({ msg: 'Post has not yet been liked' });
     }
 
-    // IMPORTANT: USED A DIFFERENT METHOD FOR FINDING REMOVE INDEX IN VIDEOS
-    // VIDEO: 27 ~ 10:00
-
     // Get remove index
     const removeIndex = post.likes.map(item => item.id).indexOf(req.params.id);
 
@@ -251,7 +248,6 @@ router.delete('/comment/:id/:comment_id', auth, async (req, res) => {
     await post.save();
 
     res.json(post.comments);
-
   } catch (err) {
     console.error(err.message);
     res.status(500).send('Server Error');
